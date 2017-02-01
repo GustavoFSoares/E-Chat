@@ -10,10 +10,12 @@
   <body>
 
     <?php
-      if(verificaUsuario()) {
-        require_once("login-formulario.php");
+    
+      if(!estaLogado()) {
+        require_once("loginFormulario.php");
       } else {
         require_once("escolherSalas.php");
+        echo "salas";
       }
      ?>
 
