@@ -12,7 +12,7 @@
       if(verificaUsuario()){
         require_once("login-formulario.php");
       }else {
-        require_once("escolher-salas.php");
+        require_once("escolherSalas.php");
       }
      ?>
     </body>
