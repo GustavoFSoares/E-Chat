@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+  require_once("logicaUsuario.php");
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,7 +9,11 @@
   </head>
   <body>
     <?php
-      require_once("login-formulario.php");
+      if(verificaUsuario()){
+        require_once("login-formulario.php");
+      }else {
+        require_once("escolher-salas.php");
+      }
      ?>
     </body>
 </html>
