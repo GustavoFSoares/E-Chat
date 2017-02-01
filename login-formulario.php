@@ -1,7 +1,7 @@
 <table>
 <h1> Login </h1>
 
-    <form action="#" method="post">
+    <form action="index.php" method="post">
         <tr>
           <td>Nome:</td>
           <td><input type="text" name"nome"></td>
