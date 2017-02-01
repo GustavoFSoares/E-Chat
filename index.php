@@ -8,12 +8,14 @@
     <title>EChat</title>
   </head>
   <body>
+
     <?php
-      if(verificaUsuario()){
+      if(verificaUsuario()) {
         require_once("login-formulario.php");
-      }else {
+      } else {
         require_once("escolherSalas.php");
       }
      ?>
+
     </body>
 </html>

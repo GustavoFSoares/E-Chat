@@ -6,7 +6,7 @@
 
     $usuarioDAO = new usuarioDAO($conexao);
 
-    if($usuarioDAO->adicionaUsuario()){ ?>
+    if($usuarioDAO->adicionaUsuario()) { ?>
       <script> alert("Usuario Adicionado!"); window.location.href="index.php";</script> <?php
     }else{ ?>
       <script> alert("Usuario não foi adicionado! /n Mude o seu nome!"); window.location.href="index.php";</script> <?php
