@@ -4,7 +4,7 @@
 
     $nome = $_POST['nome'];
 
-    $usuarioDAO = new usuarioDAO($conexao);
+    $usuarioDAO = new usuarioDAO($conecta);
 
     if($usuarioDAO->adicionaUsuario()) { ?>
       <script> alert("Usuario Adicionado!"); window.location.href="index.php";</script> <?php

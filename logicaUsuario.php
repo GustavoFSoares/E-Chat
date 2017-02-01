@@ -9,7 +9,7 @@
 
   function verificaUsuario()
   {
-    if(estaLogado()) { ?>
+    if(!estaLogado()) { ?>
       <script>alert("Você não está logado!"); window.location.href='index.php';</script> <?php
     }
 

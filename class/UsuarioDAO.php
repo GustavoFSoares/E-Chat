@@ -2,18 +2,18 @@
   class usuarioDAO
   {
 
-    private $conexao;
+    private $conecta;
 
-      function __construct($conexao)
+      function __construct($conecta)
       {
-        $this->conexao = $conexao;
+        $this->conecta = $conecta;
       }
 
 
       function adicionaUsuario($nome)
       {
         $query="INSERT INTO usuario (nome) VALUES ('{$nome}')";
-        $resultado = mysqli_query($this->conexao, $query);
+        $resultado = mysqli_query($this->conecta, $query);
 
         return $resultado;
       }
