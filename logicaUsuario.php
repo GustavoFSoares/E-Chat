@@ -14,3 +14,8 @@
     }
 
   }
+
+  function logarUsuario($nome)
+  {
+    $_SESSION['usuario_logado'] = $nome;
+  }

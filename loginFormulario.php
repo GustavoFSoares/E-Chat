@@ -4,7 +4,7 @@
     <form action="adicionaUsuario.php" method="post">
         <tr>
           <td>Nome:</td>
-          <td><input type="text" name"nome"></td>
+          <td><input type="text" name="nome"></td>
         </tr>
 
         <tr>
