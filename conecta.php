@@ -1,0 +1,1 @@
+<?php $conecta = mysqli_connect('mysql.des.f1s.me', 'des','des','EChat');
