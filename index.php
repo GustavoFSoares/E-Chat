@@ -5,6 +5,8 @@
     <title>EChat</title>
   </head>
   <body>
-
-  </body>
+    <?php
+      require_once("login-formulario.php");
+     ?>
+    </body>
 </html>
