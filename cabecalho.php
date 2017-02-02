@@ -1,5 +1,6 @@
 <?php
     require_once("logicaUsuario.php");
+    require_once("mostraMensagem.php");
 ?>
 
 <html>
@@ -24,3 +25,4 @@
 
             </div>
         </header>
+            <?=mostrarMensagemUsuario()?>

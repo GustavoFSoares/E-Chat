@@ -13,8 +13,8 @@
           logarUsuario($nome);
           header("location: index.php");
         } else {
-              
-          echo "Nao deu!"
+
+          echo "Nao deu!";
 
         }
       }

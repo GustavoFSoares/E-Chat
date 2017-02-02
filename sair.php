@@ -8,5 +8,7 @@
 
     $usuarioDAO->removeUsuario($nome);
     session_destroy();
+    session_start();
+    $_SESSION['danger'] = "Usuario ".$nome." deslogado!";
     header("Location: index.php");
     die();
