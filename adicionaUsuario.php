@@ -9,12 +9,12 @@
 
     if ($nome != null) {
 
-        if ($usuarioDAO->adicionaUsuario($nome)) {
-          logarUsuario($nome);
-          header("location: index.php");
-        } else {
-              
+    if ($usuarioDAO->adicionaUsuario($nome)) {
+    logarUsuario($nome);
+    header("location: index.php");
+    } else {
+    
           echo "Nao deu!"
 
         }
-      }
+    }
