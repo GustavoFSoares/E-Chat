@@ -4,6 +4,8 @@
 
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="css/loginFormulario.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <meta charset="utf-8">
     <title>EChat</title>
   </head>
