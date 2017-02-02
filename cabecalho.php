@@ -14,7 +14,12 @@
 
     <body>
         <header>
-            <div id="nav">
-                <h1>E-Chat</h1>
+            <div class="nav">
+
+                <div class="toolbar">
+                    <a href="index.php" class="echat">E-Chat</a>
+                    <span><a href="sair.php">Sair</a></span>
+                </div>
+
             </div>
         </header>

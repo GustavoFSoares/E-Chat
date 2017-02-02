@@ -18,5 +18,13 @@
         return $resultado;
       }
 
+      function removeUsuario($nome)
+      {
+        $query = "DELETE FROM usuario WHERE nome = '{$nome}'";
+        $resultado = mysqli_query($this->conecta, $query);
+
+        return $resultado;
+      }
+
 
   }

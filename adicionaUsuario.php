@@ -9,12 +9,12 @@
 
     $usuarioDAO = new usuarioDAO($conecta);
 
-    if($nome != null){
+    if ($nome != null) {
 
-        if($usuarioDAO->adicionaUsuario($nome)) {
+        if ($usuarioDAO->adicionaUsuario($nome)) {
           logarUsuario($nome); ?>
           <script> alert("Usuario Adicionado!"); window.location.href="index.php";</script> <?php
-        }else{ ?>
+        } else { ?>
           <script> alert("Usuario não foi adicionado! /n Mude o seu nome!"); window.location.href="index.php";</script> <?php
         }
 

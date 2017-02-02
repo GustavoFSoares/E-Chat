@@ -1,4 +1,49 @@
-h1{
-    color:#eee;
-    margin-top: 100px;
+.nav {
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.titulo{
+    float:left;
+}
+
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.toolbar {
+    position: relative;
+}
+
+.nav{
+    border-bottom:1px solid #eee;
+    margin-bottom:20px;
+}
+
+.toolbar .echat {
+    font-size:30px;
+    margin-top: 20px;
+    text-align: center
+    width: 100%;
+}
+
+.toolbar span {
+    position: absolute;
+    right: 46px;
+    top: 0px;
+}
+
+.toolbar span a {
+    color:#fff;
+    text-decoration: none;
 }
