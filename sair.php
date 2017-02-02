@@ -4,7 +4,7 @@
     require_once('class/UsuarioDAO.php');
 
     $nome = $_SESSION['usuario_logado'];
-    $usuarioDAO = new usuarioDAO($conecta);
+    $usuarioDAO = new UsuarioDAO($conecta);
 
     $usuarioDAO->removeUsuario($nome);
     session_destroy();

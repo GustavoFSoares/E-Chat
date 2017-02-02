@@ -5,16 +5,16 @@
 
     $nome = $_POST['nome'];
 
-    $usuarioDAO = new usuarioDAO($conecta);
+    $usuarioDAO = new UsuarioDAO($conecta);
 
     if ($nome != null) {
 
         if ($usuarioDAO->adicionaUsuario($nome)) {
           logarUsuario($nome);
           header("location: index.php");
-          ?>
-        } else { ?>
-          
-          <?php
+        } else {
+              
+          echo "Nao deu!"
+
         }
       }

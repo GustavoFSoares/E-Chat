@@ -1,5 +1,5 @@
 <?php
-  class usuarioDAO
+  class UsuarioDAO
   {
 
     private $conecta;
