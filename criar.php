@@ -1,1 +1,1 @@
-<?php include("cabecalho.pho"); ?>
+<?php include("cabecalho.php"); ?>
