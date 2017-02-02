@@ -1,14 +1,6 @@
-body{
-    margin:0px;
-    padding:0px;
-    font-family: 'Comfortaa', cursive;
-    text-align:center;
-    background:#002633;
-}
-
 #form-login{
     position: relative;
-    margin-top:100px;
+    margin-top:50px;
 }
 
 input[type="text"]{
