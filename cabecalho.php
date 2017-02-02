@@ -5,7 +5,7 @@
 
 <html>
     <head>
-        <link rel="shortcut icon" href="img/chatIco.png">
+        <link rel="shortcu icon" href="img/chatIco.png">
         <link rel="stylesheet" type="text/css" href="css/geral.css">
         <link rel="stylesheet" type="text/css" href="css/loginFormulario.css">
         <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
