@@ -21,7 +21,9 @@
                 <div class="toolbar">
                     <a href="index.php" class="echat">E-Chat</a>
                     <a href="criar.php">Criar</a>
-                    <span><a href="sair.php">Sair</a></span>
+                    <span>
+                        <?= (isset($_SESSION['usuario_logado'])) ? "<a href='sair.php'>Sair</a>" : "<a href='#'>Sair</a>" ?>
+                     </span>
                 </div>
 
             </div>

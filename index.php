@@ -1,9 +1,9 @@
 <?php include("cabecalho.php"); ?>
-  <?php  
+  <?php
     if (!estaLogado()) {
       require_once("loginFormulario.php");
     } else {
-      require_once("escolherSalas.php");
+      require_once("salasFormulario.php");
       echo "salas";
     }
   ?>

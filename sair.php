@@ -3,6 +3,7 @@
     require_once('logicaUsuario.php');
     require_once('class/UsuarioDAO.php');
 
+
     $nome = $_SESSION['usuario_logado'];
     $usuarioDAO = new UsuarioDAO($conecta);
 
@@ -10,5 +11,6 @@
     session_destroy();
     session_start();
     $_SESSION['danger'] = "Usuario ".$nome." deslogado!";
+
     header("Location: index.php");
     die();
