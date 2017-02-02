@@ -16,6 +16,7 @@
         <header>
             <div class="nav">
 
+                <h1><?=(isset($_SESSION['usuario_logado'])? $_SESSION['usuario_logado'] : "")?></h1>
                 <div class="toolbar">
                     <a href="index.php" class="echat">E-Chat</a>
                     <span><a href="sair.php">Sair</a></span>
