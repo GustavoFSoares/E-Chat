@@ -20,6 +20,7 @@
                 <h1><?=(isset($_SESSION['usuario_logado'])? $_SESSION['usuario_logado'] : "")?></h1>
                 <div class="toolbar">
                     <a href="index.php" class="echat">E-Chat</a>
+                    <a href="criar.php">Criar</a>
                     <span><a href="sair.php">Sair</a></span>
                 </div>
 
