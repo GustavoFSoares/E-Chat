@@ -1,6 +1,13 @@
-#form-login{
-    position: relative;
+.formulario{
     margin-top:50px;
+    position: relative;
+}
+.form-login{
+    background-color: #006080;
+    float: left; 
+    margin-left: 5%;
+    width: 70%; 
+    border-left:3px solid #004d66; 
 }
 
 input[type="text"]{

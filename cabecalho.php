@@ -9,24 +9,39 @@
         <link rel="stylesheet" type="text/css" href="css/geral.css">
         <link rel="stylesheet" type="text/css" href="css/loginFormulario.css">
         <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
+        <link rel="stylesheet" type="text/css" href="css/menuLateral.css">
         <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
         <meta charset="utf-8">
         <title>EChat</title>
     </head>
 
     <body>
+
         <header>
-            <div class="nav">
+            <nav class="nav">
 
-                <h1><?=(isset($_SESSION['usuario_logado'])? $_SESSION['usuario_logado'] : "")?></h1>
-                <div class="toolbar">
-                    <a href="index.php" class="echat">E-Chat</a>
-                    <a href="criar.php">Criar</a>
-                    <span>
+
+                <ul class="toolbar">
+                    <li class="home">
+                            <a href="#" id="home">E-Chat</a>
+                    </li>
+                    <li><a href="#" id="criar">Criar</a></li>                   
+                    <li><a href="#" id="procurar">Procurar</a></li>
+                    <li class="nomeUser">
+                        <?=(isset($_SESSION['usuario_logado'])? $_SESSION['usuario_logado'] : "")?>
+                    </li>
+                    <li class="sair">
                         <?= (isset($_SESSION['usuario_logado'])) ? "<a href='sair.php'>Sair</a>" : "<a href='#'>Sair</a>" ?>
-                     </span>
-                </div>
+                    </li>
+                </ul>
 
-            </div>
+            </nav>
         </header>
+<?php require_once("menuLateral.php"); ?>
+<?php require_once("salasFormulario.php");?>
+<?php //require_once("salasProcurar.php");?>
             <?=mostrarMensagemUsuario()?>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/cabecalho.js"></script>
+</body>
+</html>

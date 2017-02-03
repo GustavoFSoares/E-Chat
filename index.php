@@ -3,8 +3,7 @@
     if (!estaLogado()) {
       require_once("loginFormulario.php");
     } else {
-      require_once("salasFormulario.php");
-      echo "salas";
+      //  header("location: index.php");
     }
   ?>
   </body>
