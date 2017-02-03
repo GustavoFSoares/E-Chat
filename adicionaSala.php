@@ -7,11 +7,14 @@
     $nome = $_POST['nome'];
     $tipo = $_POST['tipo'];
 
+
     $salaDAO = new SalaDAO($conecta);
+    $usuarioDAO = new UsuarioDAO($conecta);
+    $id = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
 
     if ($nome != null) {
 
-        if ($salaDAO->adicionaSala($nome, $tipo)) {
+        if ($salaDAO->adicionaSala($nome, $tipo, $id)) {
           header("location: index.php");
         } else {
 
