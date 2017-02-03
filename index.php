@@ -3,7 +3,7 @@
     if (!estaLogado()) {
       require_once("loginFormulario.php");
     } else {
-      //  header("location: index.php");
+        header("location: logado.php");
     }
   ?>
   </body>
