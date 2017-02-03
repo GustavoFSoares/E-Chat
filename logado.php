@@ -28,7 +28,6 @@
         <?php require_once("salasFormulario.php");?>
         <?php require_once("procurar.php");?>
     </div>
-            <?=mostrarMensagemUsuario()?>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/cabecalho.js"></script>
 </body>
