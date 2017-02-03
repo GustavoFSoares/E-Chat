@@ -52,39 +52,6 @@ ul.toolbar li {
     list-style: none;
 }
 
-
-.menuLateral {
-    float: left;
-    width: 30%;
-    overflow: hidden;
-}
-
-.content {
-    width: 70%;
-    float: left;
-    overflow: hidden;
-}
-
-
-
-.menuLateral li {
-    overflow: hidden;
-    list-style-type: inherit;
-}
-
-.menuLateral li a{
-    text-decoration: none;
-}
-.formulario{
-    position: relative;
-}
-.form-login{
-    background-color: #006080;
-    float: left; 
-    margin-left: 5%;
-    width: 70%; 
-}
-
 input[type="text"]{
     outline:none;
     padding:10px;
@@ -126,14 +93,17 @@ button[type="submit"]:hover{
 
 .menuLateral {
     float: left;
-    width: 25%;
+    width: 15%;
     overflow: hidden;
+    background-color: black;
 }
 
 .content {
-    width: 70%;
+    width: 83%;
     float: left;
     overflow: hidden;
+    margin-left: 1%;
+    background-color: blue;
 }
 
 
