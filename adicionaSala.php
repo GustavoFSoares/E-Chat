@@ -6,11 +6,12 @@
 
     $nome = $_POST['nome'];
     $tipo = $_POST['tipo'];
-
+    $nomeUser = $_SESSION['usuario_logado'];
 
     $salaDAO = new SalaDAO($conecta);
     $usuarioDAO = new UsuarioDAO($conecta);
-    $id = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
+    $usuario = $usuarioDAO->selecionaId($nomeUser);
+    $id = $usuario['id_usuario'];
 
     if ($nome != null) {
 
