@@ -1,8 +1,198 @@
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,
+dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,
+tfoot,thead,tr,th,td,article,aside,canvas,details,
+figcaption,figure,footer,header,hgroup,menu,nav,
+section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: Arial;
+}
+
+
 body{
-    margin:0px;
-    padding:0px;
     font-family: 'Comfortaa', cursive;
     text-align:center;
     background:#002633;
     color:#eee;
+}
+
+.menuLateral {
+    float: left;
+    width: 25%;
+}
+
+.content {
+    float: left;
+    width: 70%;
+    margin-left: 5%;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    
+}
+
+ul.toolbar {
+    width: 100%;
+}
+
+ul.toolbar li {
+    float: left;
+    margin-right: 10px;
+    list-style: none;
+}
+
+
+.menuLateral {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+}
+
+.content {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+.menuLateral li {
+    overflow: hidden;
+    list-style-type: inherit;
+}
+
+.menuLateral li a{
+    text-decoration: none;
+}
+.formulario{
+    position: relative;
+}
+.form-login{
+    background-color: #006080;
+    float: left; 
+    margin-left: 5%;
+    width: 70%; 
+}
+
+input[type="text"]{
+    outline:none;
+    padding:10px;
+    display:block;
+    width:300px;
+    font-size:20px;
+    color:white;
+    background:#00131a;
+    border-radius:3px;
+    border:1px solid #808080;
+    margin:20px auto;
+    box-shadow: inherit;
+}
+
+input[type="text"]:focus{
+    border-color:#0098cb;
+}
+
+input[type="text"]:hover{
+    border-color:#a6a6a6;
+}
+
+button[type="submit"]{
+    padding:10px;
+    color:#fff;
+    background:#0098cb;
+    width:300px;
+    margin:20px auto;
+    margin-top: 0px;
+    border:0px;
+    border-radius: 3px;
+    cursor:pointer;
+    font-size: 20px; 
+}
+
+button[type="submit"]:hover{
+    background:#00b8eb;
+}
+
+.menuLateral {
+    float: left;
+    width: 25%;
+    overflow: hidden;
+}
+
+.content {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+.menuLateral li {
+    overflow: hidden;
+    list-style-type: inherit;
+}
+
+.menuLateral li a{
+    text-decoration: none;
+}
+
+.lista, .formulario{
+    display: none;
+}
+
+
+.nav{
+    background-color: #006080;
+    border-bottom:3px solid #004d66;
+    width: 100%;
+    height: 50px;
+}
+
+.nav a, .nomeUser {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav li{
+    float: left;
+    overflow: hidden;
+}
+
+.toolbar {
+    position: relative;
+}
+
+.toolbar li a{
+    text-decoration: none;
+}
+.toolbar li a:hover{
+    background-color: #002633;
+}
+
+.toolbar .nomeUser{
+    position: absolute;
+    right: 150px;
+}
+.toolbar .sair{
+    position: absolute;
+    right: 46px;
+    top: 0px;
+}
+
+.toolbar .sair a {
+    color:#fff;
+    text-decoration: none;
 }
