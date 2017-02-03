@@ -4,13 +4,19 @@
 
     private $conecta;
 
-      function __construct($conecta)
+      public function __construct($conecta)
       {
         $this->conecta = $conecta;
       }
 
+      public function entrarSala($idSala, $idUsuario){
+        $query="INSERT INTO salas_usuarios VALUES ({$idSala}, {$idUsuario})";
+        $resultado = mysqli_query($this->conecta, $query);
+        
+        return $resultado;
+      }
 
-      function adicionaSala($nome, $tipo, $idUsuario)
+      public function adicionaSala($nome, $tipo, $idUsuario)
       {
         $query="INSERT INTO sala (nome, tipo, data,fk_usuario) VALUES ('{$nome}', '{$tipo}', now(),'{$idUsuario}')";
         $resultado = mysqli_query($this->conecta, $query);
@@ -18,4 +24,11 @@
         return $resultado;
       }
 
+      public function selecionaId($nome)
+      {
+        $query = "SELECT id_sala FROM sala WHERE nome = '{$nome}'";
+        $resultado = mysqli_query($this->conecta, $query);
+
+        return mysqli_fetch_assoc($resultado);
+      }
   }

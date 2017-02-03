@@ -4,13 +4,13 @@
 
     private $conecta;
 
-      function __construct($conecta)
+      public function __construct($conecta)
       {
         $this->conecta = $conecta;
       }
 
 
-      function adicionaUsuario($nome)
+      public function adicionaUsuario($nome)
       {
         $query="INSERT INTO usuario (nome) VALUES ('{$nome}')";
         $resultado = mysqli_query($this->conecta, $query);
@@ -18,7 +18,7 @@
         return $resultado;
       }
 
-      function removeUsuario($nome)
+      public function removeUsuario($nome)
       {
         $query = "DELETE FROM usuario WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
@@ -26,7 +26,7 @@
         return $resultado;
       }
 
-      function selecionaId($nome)
+      public function selecionaId($nome)
       {
         $query = "SELECT id_usuario FROM usuario WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
