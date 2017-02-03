@@ -39,7 +39,7 @@
         </header>
 <?php require_once("menuLateral.php"); ?>
 <?php require_once("salasFormulario.php");?>
-<?php //require_once("salasProcurar.php");?>
+<?php require_once("procurar.php");?>
             <?=mostrarMensagemUsuario()?>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/cabecalho.js"></script>

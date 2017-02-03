@@ -1,11 +1,12 @@
-.menuLateral li {
-    overflow: hidden;
-    list-style-type: inherit;
-}
 .menuLateral {
     float: left;
     width: 10%;
     background-color: #006080;
+}
+
+.menuLateral li {
+    overflow: hidden;
+    list-style-type: inherit;
 }
 
 .menuLateral li a{
