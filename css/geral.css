@@ -24,10 +24,6 @@ body{
     color:#eee;
 }
 
-.menuLateral {
-    float: left;
-    width: 25%;
-}
 
 .content {
     float: left;
@@ -74,7 +70,7 @@ input[type="text"]:hover{
     border-color:#a6a6a6;
 }
 
-button[type="submit"]{
+.btn-login{
     padding:10px;
     color:#fff;
     background:#0098cb;
@@ -87,8 +83,12 @@ button[type="submit"]{
     font-size: 20px; 
 }
 
-button[type="submit"]:hover{
+.btn-login:hover{
     background:#00b8eb;
+}
+
+.btn-entrar{
+    background-color: red;
 }
 
 .menuLateral {

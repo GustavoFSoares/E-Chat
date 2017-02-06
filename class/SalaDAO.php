@@ -16,6 +16,26 @@
         return $resultado;
       }
 
+      public function salaporId($id)
+      {
+        $query = "SELECT s.id_sala, s.nome 
+          FROM sala s
+          JOIN salas_usuarios su on su.id_salas = s.id_sala
+          JOIN usuario u on u.id_usuario = su.id_usuarios 
+          WHERE '{$id}' = id_usuarios";
+        $resultado = mysqli_query($this->conecta, $query);
+
+        return $resultado;
+      }
+
+      public function listaSala()
+      {
+        $query = "SELECT s.nome, s.tipo FROM sala s";
+        $resultado = mysqli_query($this->conecta, $query);
+
+        return $resultado;  
+      }
+
       public function adicionaSala($nome, $tipo, $idUsuario)
       {
         $query="INSERT INTO sala (nome, tipo, data,fk_usuario) VALUES ('{$nome}', '{$tipo}', now(),'{$idUsuario}')";
