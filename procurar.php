@@ -8,8 +8,6 @@
                 $salaDAO = new SalaDAO($conecta);
                 $idSalas = $salaDAO->listaSala($idUser);
 
-                $usuarioDAO = new UsuarioDAO($conecta);
-                $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
                 ?>
 
                 <ul class="salas">
@@ -25,4 +23,3 @@
                 </ul>
         </div>
     </div>
-

@@ -8,8 +8,8 @@
 
                 $nomeUser = $_SESSION['usuario_logado'];
                 $usuarioDAO = new UsuarioDAO($conecta);
-                $userDAO = $usuarioDAO->selecionaId($nomeUser);
-                $idUser = $userDAO['id_usuario'];
+                $idUser = $usuarioDAO->selecionaId($nomeUser);
+                
 
                 $salaDAO = new SalaDAO($conecta);
                 $idSalas = $salaDAO->listaSala($idUser); //salapoId
@@ -18,7 +18,7 @@
                 <ul>
 
                 <?php
-                foreach ($idSalas as $id) 
+                foreach ($idSalas as $id)
                 {
                 ?>
                     <li><a href="sala.php?id=<?= $id['id_sala'] ?>"><?= $id['nome']?></a></li>
@@ -28,4 +28,4 @@
                 ?>
                 </ul>
         </div>
-    </div> 
+    </div>

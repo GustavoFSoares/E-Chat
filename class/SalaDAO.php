@@ -12,16 +12,16 @@
       public function entrarSala($idSala, $idUsuario){
         $query="INSERT INTO salas_usuarios VALUES ({$idSala}, {$idUsuario})";
         $resultado = mysqli_query($this->conecta, $query);
-        
+
         return $resultado;
       }
 
       public function salaporId($id)
       {
-        $query = "SELECT s.id_sala, s.nome 
+        $query = "SELECT s.id_sala, s.nome
           FROM sala s
           JOIN salas_usuarios su on su.id_salas = s.id_sala
-          JOIN usuario u on u.id_usuario = su.id_usuarios 
+          JOIN usuario u on u.id_usuario = su.id_usuarios
           WHERE '{$id}' = id_usuarios";
         $resultado = mysqli_query($this->conecta, $query);
 
@@ -33,7 +33,7 @@
         $query = "SELECT s.nome, s.id_sala FROM sala s";
         $resultado = mysqli_query($this->conecta, $query);
 
-        return $resultado;  
+        return $resultado;
       }
 
       public function adicionaSala($nome, $tipo, $idUsuario)
@@ -49,6 +49,8 @@
         $query = "SELECT id_sala FROM sala WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
 
-        return mysqli_fetch_assoc($resultado);
+
+        $sala = mysqli_fetch_assoc($resultado);
+        return $sala['id_sala'];
       }
   }

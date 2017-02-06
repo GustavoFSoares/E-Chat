@@ -30,8 +30,10 @@
       {
         $query = "SELECT id_usuario FROM usuario WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
-        
-        return mysqli_fetch_assoc($resultado);
+
+        $usuario = mysqli_fetch_assoc($resultado);
+        return $usuario['id_usuario'];
       }
+
 
   }

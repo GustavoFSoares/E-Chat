@@ -10,16 +10,15 @@
 
 
     $usuarioDAO = new UsuarioDAO($conecta);
-    $user = $usuarioDAO->selecionaId($nomeUser);
-    $idUser = $user['id_usuario'];
+    $iduser = $usuarioDAO->selecionaId($nomeUser);
 
     $salaDAO = new SalaDAO($conecta);
 
     if ($nomeSala != null) {
 
         if ($salaDAO->adicionaSala($nomeSala, $tipoSala, $idUser)) {
-            $sala = $salaDAO->selecionaId($nomeSala);
-            $idSala = $sala['id_sala'];
+            $idSala = $salaDAO->selecionaId($nomeSala);
+            
             $salaDAO->entrarSala($idSala, $idUser);
             header("location: index.php");
         } else {
