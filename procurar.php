@@ -15,7 +15,7 @@
                 <?php
                 foreach ($idSalas as $id) {
                 ?>
-                    <li><a id="<?php echo 'sala-'.$id['id']?>" href="#"><?= $id['nome']?></a></li>
+                    <li><a href="sala.php?id=<?= $id['id_sala']?>"><?= $id['nome']?></a></li>
 
                 <?php
                 }
