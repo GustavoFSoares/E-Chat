@@ -35,7 +35,7 @@ header {
     width: 100%;
     margin-bottom: 10px;
     overflow: hidden;
-    
+
 }
 
 ul.toolbar {
@@ -80,7 +80,7 @@ input[type="text"]:hover{
     border:0px;
     border-radius: 3px;
     cursor:pointer;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 .btn-login:hover{
@@ -129,7 +129,7 @@ input[type="text"]:hover{
     height: 50px;
 }
 
-.nav a, .nomeUser {
+.nav a, .userNome {
     display: block;
     color: white;
     text-align: center;
@@ -152,7 +152,7 @@ input[type="text"]:hover{
     background-color: #002633;
 }
 
-.toolbar .nomeUser{
+.toolbar .userNome{
     position: absolute;
     right: 150px;
 }

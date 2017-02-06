@@ -3,13 +3,13 @@
     require_once('logicaUsuario.php');
     require_once('class/MensagemDAO.php');
 
-    $idSala = $_POST['idSala'];
+    $salaId = $_POST['salaId'];
     $mensagem = $_POST['mensagem'];
 
     $mensagemDAO = new MensagemDAO($conecta);
 
     if ($mensagem != null) {
 
-        $mensagemDAO->adicionaMensagem($mensagem, $idSala);
-
+        $mensagemDAO->adicionaMensagem($mensagem, $salaId);
+        header("location: sala.php?salaId=$salaId");
     }

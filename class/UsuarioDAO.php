@@ -18,6 +18,7 @@
         return $resultado;
       }
 
+
       public function removeUsuario($nome)
       {
         $query = "DELETE FROM usuario WHERE nome = '{$nome}'";
@@ -25,6 +26,7 @@
 
         return $resultado;
       }
+
 
       public function selecionaId($nome)
       {
@@ -36,11 +38,13 @@
       }
 
 
-      public function buscaNome($idUser){
-            $query = "SELECT nome FROM usuario WHERE id_usuario = '{$idUser}'";
+      public function buscaNome($userId){
+            $query = "SELECT nome FROM usuario WHERE id_usuario = '{$userId}'";
             $resultado = mysqli_query($this->conecta, $query);
 
             $usuario = mysqli_fetch_assoc($resultado);
             return $usuario['nome'];
       }
+
+
   }

@@ -6,14 +6,14 @@
                 require_once('class/SalaDAO.php');
 
                 $salaDAO = new SalaDAO($conecta);
-                $idSalas = $salaDAO->listaSala($idUser);
+                $salasId = $salaDAO->listaSala($userId);
 
                 ?>
 
                 <ul class="salas">
 
                 <?php
-                foreach ($idSalas as $id) {
+                foreach ($salasId as $id) {
                 ?>
                     <li><a href="sala.php?id=<?= $id['id_sala']?>"><?= $id['nome']?></a></li>
 
