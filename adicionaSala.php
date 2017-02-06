@@ -14,13 +14,12 @@
     $idUser = $user['id_usuario'];
 
     $salaDAO = new SalaDAO($conecta);
-    $sala = $salaDAO->selecionaId($nomeSala);
-    $idSala = $sala['id_sala'];
 
     if ($nomeSala != null) {
 
         if ($salaDAO->adicionaSala($nomeSala, $tipoSala, $idUser)) {
-
+            $sala = $salaDAO->selecionaId($nomeSala);
+            $idSala = $sala['id_sala'];
             $salaDAO->entrarSala($idSala, $idUser);
             header("location: index.php");
         } else {
