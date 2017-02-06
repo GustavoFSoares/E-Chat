@@ -36,4 +36,11 @@
       }
 
 
+      public function buscaNome($idUser){
+            $query = "SELECT nome FROM usuario WHERE id_usuario = '{$idUser}'";
+            $resultado = mysqli_query($this->conecta, $query);
+
+            $usuario = mysqli_fetch_assoc($resultado);
+            return $usuario['nome'];
+      }
   }
