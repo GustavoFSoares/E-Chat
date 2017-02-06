@@ -12,7 +12,7 @@
                 $idUser = $userDAO['id_usuario'];
 
                 $salaDAO = new SalaDAO($conecta);
-                $idSalas = $salaDAO->listaSala($idUser); //salapoId
+                $idSalas = $salaDAO->salaporId($idUser); //salapoId
                 ?>
 
                 <ul>
