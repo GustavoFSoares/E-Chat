@@ -30,7 +30,7 @@
 
       public function listaSala()
       {
-        $query = "SELECT s.nome, s.tipo FROM sala s";
+        $query = "SELECT s.nome, s.id_sala FROM sala s";
         $resultado = mysqli_query($this->conecta, $query);
 
         return $resultado;  

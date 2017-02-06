@@ -8,19 +8,21 @@
                 $salaDAO = new SalaDAO($conecta);
                 $idSalas = $salaDAO->listaSala($idUser);
 
+                $usuarioDAO = new UsuarioDAO($conecta);
+                $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
                 ?>
 
-                <table>
+                <ul class="salas">
 
                 <?php
-                foreach ($idSalas as $id) 
-                {
+                foreach ($idSalas as $id) {
                 ?>
-                    <tr><td><?= $id['nome']?></td><td><button class="btn-entrar" type="submit" value="Entrar"></td></tr>
+                    <li><a id="<?php echo 'sala-'.$id['id']?>" href="#"><?= $id['nome']?></a></li>
 
                 <?php
                 }
                 ?>
-                </table>
+                </ul>
         </div>
     </div>
+

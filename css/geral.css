@@ -95,7 +95,7 @@ input[type="text"]:hover{
     float: left;
     width: 15%;
     overflow: hidden;
-    background-color: black;
+    background-color: green;
 }
 
 .content {
@@ -103,7 +103,7 @@ input[type="text"]:hover{
     float: left;
     overflow: hidden;
     margin-left: 1%;
-    background-color: blue;
+    background-color: green;
 }
 
 

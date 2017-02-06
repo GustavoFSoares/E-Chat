@@ -12,20 +12,20 @@
                 $idUser = $userDAO['id_usuario'];
 
                 $salaDAO = new SalaDAO($conecta);
-                $idSalas = $salaDAO->salaporId($idUser);
+                $idSalas = $salaDAO->listaSala($idUser); //salapoId
                 ?>
 
-                <table>
+                <ul>
 
                 <?php
                 foreach ($idSalas as $id) 
                 {
                 ?>
-                    <tr><td><?= $id['nome']?></td></tr>
+                    <li><a href="sala.php?id=<?= $id['id_sala'] ?>"><?= $id['nome']?></a></li>
 
                 <?php
                 }
                 ?>
-                </table>
+                </ul>
         </div>
     </div> 
