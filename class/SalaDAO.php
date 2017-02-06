@@ -16,16 +16,32 @@
         return $resultado;
       }
 
-      public function salaporId($id)
+      public function salaporId($idUser)
       {
         $query = "SELECT s.id_sala, s.nome
           FROM sala s
           JOIN salas_usuarios su on su.id_salas = s.id_sala
           JOIN usuario u on u.id_usuario = su.id_usuarios
-          WHERE '{$id}' = id_usuarios";
+          WHERE '{$idUser}' = id_usuarios";
         $resultado = mysqli_query($this->conecta, $query);
 
         return $resultado;
+      }
+
+      public function verifica($idUser, $idSala){
+         $query = "SELECT s.*
+          FROM sala s
+          JOIN salas_usuarios su on su.id_salas = s.id_sala
+          JOIN usuario u on u.id_usuario = su.id_usuarios
+          WHERE '{$idUser}' = su.id_usuarios AND '{$idSala}' = su.id_salas";
+
+          $resultado = mysqli_query($this->conecta, $query);
+          
+          if (mysqli_num_rows($resultado)==0) {
+            return false;
+          } else {
+            return true;
+          }
       }
 
       public function listaSala()

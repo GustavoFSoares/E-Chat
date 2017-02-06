@@ -10,7 +10,7 @@
 
 
     $usuarioDAO = new UsuarioDAO($conecta);
-    $iduser = $usuarioDAO->selecionaId($nomeUser);
+    $idUser = $usuarioDAO->selecionaId($nomeUser);
 
     $salaDAO = new SalaDAO($conecta);
 
