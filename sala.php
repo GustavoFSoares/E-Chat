@@ -1,7 +1,7 @@
 <?php   include_once("logado.php"); 
         require_once("class/MensagemDAO.php");
         ?>
-        <div class="chat">
+    <div class="chat">
         <?php
     $salaDAO = new SalaDAO($conecta);
     $usuario_logadoarioDAO = new UsuarioDAO($conecta);
@@ -20,8 +20,9 @@
         foreach ($mensagens as $mensagem) { ?>
             <ol>
                 <div id="mensagem">
-                    <?=$usuarioDAO->buscaNome($mensagem['fk_usuario']).":"?>
-                    <?= $mensagem['msg']?>
+                    <span class="data"><?= $mensagem['data']."  -!-  "?></span>
+                    <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
+                    <span class="msg"><?= $mensagem['msg']?></span>
                     
                 </div>
             </ol>     <?php
@@ -35,7 +36,7 @@
     
     <form action="adicionaMensagem.php" method="POST">
         <input type="hidden" name="idSala" value="<?=$salaId?>">
-        <span>></span> <textarea name="mensagem"></textarea>
-        <button class="btn-enviar" type="submit">INSERT</button>
+        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span> <input class="mensagem" name="mensagem">  </input>
+        <button class="btn-enviar">INSERT</button>
     </form>
     </div>

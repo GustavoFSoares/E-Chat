@@ -14,7 +14,6 @@ section,summary,time,mark,audio,video {
     vertical-align: baseline;
     background: transparent;
     font-family: 'Ubuntu', sans-serif;
-    font-size:15px;
 }
 
 
@@ -80,7 +79,7 @@ input[type="text"]:hover{
     border:0px;
     border-radius: 3px;
     cursor:pointer;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .btn-login:hover{
@@ -101,6 +100,13 @@ input[type="text"]:hover{
     -webkit-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.4);
     -moz-box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.55);
+}
+
+.content a {
+    color:red;
+    margin: 15px;
+    text-decoration: none;
+    color:#00F800;
 }
 
 .menuLateral {
@@ -124,8 +130,18 @@ input[type="text"]:hover{
 
 .menuLateral li a{
     margin: 15px;
+    margin-left: 20px;
     text-decoration: none;
     color:#00F800;
+}
+
+.menuLateral h2{
+    color:#C40000;
+    margin: 15px;
+}
+
+.menuLateral h2 span {
+    color:#C4A000;
 }
 
 .lista, .formulario{
@@ -180,32 +196,30 @@ input[type="text"]:hover{
     color:#fff;
     text-decoration: none;
 }
+
+.lista{
+    text-align: left;
+}
+
 .lista li{
     overflow: hidden;
     list-style-type: inherit;
     padding: 5px;
     text-align: left;
-}
-
-.menuLateral h2{
-    color:red;
-    margin: 15px;
-}
-
-.menuLateral h2 span {
-    color:#C4A000;
+    margin-left: 25px;
 }
 
 .lista h2{
     color:red;
     margin: 15px;
+    position: relative;
 }
 
 .lista h2 span {
     color:#C4A000;
 }
 
-textarea {
+.mensagem{
     border: none;
     overflow: auto;
     outline: none;
@@ -214,4 +228,22 @@ textarea {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+}
+.data{
+    color:#C40000;
+}
+.nome{
+    color:#BF8800;
+}
+.msg{
+    color:#449306
+}
+.chat{
+    text-align: left;
+}
+
+.btn-enviar {
+    border:none;
+    background: #000000;
+    color: #00F800;
 }

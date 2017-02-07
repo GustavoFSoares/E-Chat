@@ -9,9 +9,9 @@
                 $salasId = $salaDAO->listaSala($userId);
 
                 ?>
-                <h2><span><</span> Todas salas <span>></span></h2>
                 <ul class="salas">
 
+                <h2><span><</span> Todas salas <span>></span></h2>
                 <?php
                 foreach ($salasId as $id) {
                 ?>
