@@ -4,22 +4,22 @@
     require_once('class/UsuarioDAO.php');
     require_once('class/SalaDAO.php');
 
-    $nomeSala = $_POST['nome'];
-    $tipoSala = $_POST['tipo'];
-    $nomeUser = $_SESSION['usuario_logado'];
+    $salaNome = $_POST['salaNome'];
+    $salaTipo = $_POST['salaTipo'];
+    $userNome = $_SESSION['usuario_logado'];
 
 
     $usuarioDAO = new UsuarioDAO($conecta);
-    $idUser = $usuarioDAO->selecionaId($nomeUser);
+    $userId = $usuarioDAO->selecionaId($userNome);
 
     $salaDAO = new SalaDAO($conecta);
 
-    if ($nomeSala != null) {
+    if ($salaNome != null) {
 
-        if ($salaDAO->adicionaSala($nomeSala, $tipoSala, $idUser)) {
-            $idSala = $salaDAO->selecionaId($nomeSala);
-            
-            $salaDAO->entrarSala($idSala, $idUser);
+        if ($salaDAO->adicionaSala($salaNome, $salaTipo, $userId)) {
+            $salaId = $salaDAO->selecionaId($salaNome);
+
+            $salaDAO->entrarSala($salaId, $userId);
             header("location: index.php");
         } else {
 

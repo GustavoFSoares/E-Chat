@@ -3,14 +3,14 @@
     require_once('logicaUsuario.php');
     require_once('class/UsuarioDAO.php');
 
-    $nome = $_POST['nome'];
+    $userNome = $_POST['userNome'];
 
     $usuarioDAO = new UsuarioDAO($conecta);
 
-    if ($nome != null) {
+    if ($userNome != null) {
 
-        if ($usuarioDAO->adicionaUsuario($nome)) {
-          logarUsuario($nome);
+        if ($usuarioDAO->adicionaUsuario($userNome)) {
+          logarUsuario($userNome);
           header("location: index.php");
         } else {
 

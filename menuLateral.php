@@ -6,19 +6,19 @@
                 require_once('class/UsuarioDAO.php');
                 require_once('class/SalaDAO.php');
 
-                $nomeUser = $_SESSION['usuario_logado'];
+                $userNome = $_SESSION['usuario_logado'];
                 $usuarioDAO = new UsuarioDAO($conecta);
-                $idUser = $usuarioDAO->selecionaId($nomeUser);
-                
+                $userId = $usuarioDAO->selecionaId($userNome);
+
 
                 $salaDAO = new SalaDAO($conecta);
-                $idSalas = $salaDAO->salaporId($idUser); //salapoId
+                $salasId = $salaDAO->salaporId($userId); //salapoId
                 ?>
 
                 <ul>
 
                 <?php
-                foreach ($idSalas as $id)
+                foreach ($salasId as $id)
                 {
                 ?>
                     <li><a href="sala.php?id=<?= $id['id_sala'] ?>"><?= $id['nome']?></a></li>
