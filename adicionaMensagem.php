@@ -6,8 +6,7 @@
 
     $usuarioDAO = new UsuarioDAO($conecta);
     $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
-    echo $userId;
-    
+
     $idSala = $_POST['idSala'];
     $mensagem = $_POST['mensagem'];
 
@@ -16,5 +15,5 @@
     if ($mensagem != null) {
 
         $mensagemDAO->adicionaMensagem($mensagem, $idSala, $userId);
-
+        header("location: sala.php?id=$idSala");
     }

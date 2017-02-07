@@ -14,13 +14,11 @@
 
     if ($salaDAO->verifica($userId, $salaId)) {
 
-        echo "AQUI";
-
         $mensagens = $mensagemDAO->exibirMensagem($salaId);
 
         foreach ($mensagens as $mensagem) { ?>
             <ol>
-                <?=$UsuarioDAO->buscaNome($mensagem['id_usuario'])?>
+                <?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])?>
                 <div id="mensagem"><?=$mensagem['msg']?></div>
             <ol>     <?php
         }
@@ -30,6 +28,7 @@
         header("location:sala.php?id=$salaId");
         die();
     }
+    echo "teste";
     ?>
     
     <form action="adicionaMensagem.php" method="POST">

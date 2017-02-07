@@ -14,18 +14,22 @@
                 $salaDAO = new SalaDAO($conecta);
                 $salasId = $salaDAO->salaporId($userId); //salapoId
                 ?>
-
+                <h2><span><</span> Minhas salas <span>></span></h2>
                 <ul>
+
 
                 <?php
                 foreach ($salasId as $id)
                 {
                 ?>
-                    <li><a href="sala.php?id=<?= $id['id_sala'] ?>"><?= $id['nome']?></a></li>
+                    <li>
+                        <a href="sala.php?id=<?= $id['id_sala'] ?>">~ <?= $id['nome']?></a>
+                    </li>
 
                 <?php
                 }
                 ?>
                 </ul>
+                <h2><span>< /</span> Minhas salas <span>></span></h2>
         </div>
     </div>

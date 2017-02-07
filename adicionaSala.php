@@ -4,8 +4,8 @@
     require_once('class/UsuarioDAO.php');
     require_once('class/SalaDAO.php');
 
-    $salaNome = $_POST['salaNome'];
-    $salaTipo = $_POST['salaTipo'];
+    $salaNome = $_POST['nome'];
+    $salaTipo = $_POST['tipo'];
     $userNome = $_SESSION['usuario_logado'];
 
 
