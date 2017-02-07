@@ -204,3 +204,14 @@ input[type="text"]:hover{
 .lista h2 span {
     color:#C4A000;
 }
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    background: #000000;
+    color:#00F800;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
