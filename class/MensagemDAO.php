@@ -11,21 +11,20 @@
         }
 
 
-        public function adicionaMensagem($mensagem, $salaId)
+        public function adicionaMensagem($mensagem, $salaId, $userId)
         {
-            $query = "INSERT INTO mensagem (msg, data, fk_sala) VALUES ('{$mensagem}',now(),'{$salaId}')";
+            $query = "INSERT INTO mensagem (msg, data, fk_sala, fk_usuario) VALUES ('{$mensagem}',now(),'{$salaId}', '{$userId}')";
 
             $resultado = mysqli_query($this->conecta, $query);
             return $resultado;
         }
 
-
         public function exibirMensagem($salaId)
         {
             $query = "SELECT mensagem.* FROM mensagem
-                INNER JOIN usuario ON usuario.id_usuario = mensagem.id_usuario
-                INNER JOIN sala ON sala.id_sala = mensagem.id_sala
-            WHERE id_sala = '{$salaId}' ORDER BY mensagem.data";
+                INNER JOIN usuario ON usuario.id_usuario = mensagem.fk_usuario
+                INNER JOIN sala ON sala.id_sala = mensagem.fk_sala
+            WHERE sala.id_sala = '{$salaId}' ORDER BY mensagem.data";
 
             $resultado = mysqli_query($this->conecta, $query);
 
@@ -35,6 +34,5 @@
             }
             return $arMensagem;
         }
-
-
+          
     }
