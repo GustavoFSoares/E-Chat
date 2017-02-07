@@ -9,9 +9,10 @@
     
 
     if ($salaDAO->verifica($userId, $salaId)) {
-        echo "ja ta na sala";
+        echo "load nas mensagens da sala";
     } else {
         $salaDAO->entrarSala($salaId, $userId);
+
     }
 
 ?>
