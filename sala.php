@@ -15,26 +15,30 @@
     
     if ($salaDAO->verifica($userId, $salaId)) {
 
-        $mensagens = $mensagemDAO->exibirMensagem($salaId);
-        foreach ($mensagens as $mensagem) { ?>
-            <ol>
+        $mensagens = $mensagemDAO->exibirMensagem($salaId); ?>
+        <ol class="mensagens-list">
+        <?php foreach ($mensagens as $mensagem) { ?>
                 <li id="mensagem">
                     <span class="data"><?= $mensagem['data']."  -!-  "?></span>
                     <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
                     <span class="msg"><?= $mensagem['msg']?></span>
                     
                 </li>
-            </ol>     <?php
+     <?php
         }
 
     } else {
         $salaDAO->entrarSala($salaId, $userId);
     }
     ?>
-    
-    <form action="adicionaMensagem.php" method="POST">
-        <input type="hidden" name="idSala" value="<?=$salaId?>">
-        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span> <input class="mensagem" name="mensagem" checked="checked">  </input>
-        <button class="btn-enviar">INSERT</button>
+        </ol>   
+    <form action="" method="POST">
+        
+        <input id="idSala" type="hidden" name="idSala" value="<?=$salaId?>">
+        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span> 
+        <input id="msg" class="mensagem" name="mensagem" checked="checked">  </input>
+
+        <a id="send" class="btn-enviar">INSERT</a>
+
     </form>
     </div>
