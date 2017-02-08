@@ -19,12 +19,12 @@
         $mensagens = $mensagemDAO->exibirMensagem($salaId);
         foreach ($mensagens as $mensagem) { ?>
             <ol>
-                <div id="mensagem">
+                <li id="mensagem">
                     <span class="data"><?= $mensagem['data']."  -!-  "?></span>
                     <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
                     <span class="msg"><?= $mensagem['msg']?></span>
                     
-                </div>
+                </li>
             </ol>     <?php
         }
 
