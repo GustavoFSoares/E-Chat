@@ -13,7 +13,6 @@
 
     $salaDAO = new SalaDAO($conecta);
     
-
     if ($salaDAO->verifica($userId, $salaId)) {
 
         $mensagens = $mensagemDAO->exibirMensagem($salaId);
