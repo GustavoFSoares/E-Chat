@@ -30,13 +30,12 @@
 
     } else {
         $salaDAO->entrarSala($salaId, $userId);
-        header("location:sala.php?id=$salaId");
     }
     ?>
     
     <form action="adicionaMensagem.php" method="POST">
         <input type="hidden" name="idSala" value="<?=$salaId?>">
-        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span> <input class="mensagem" name="mensagem">  </input>
+        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span> <input class="mensagem" name="mensagem" checked="checked">  </input>
         <button class="btn-enviar">INSERT</button>
     </form>
     </div>

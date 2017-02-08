@@ -17,5 +17,6 @@
         $mensagemDAO->adicionaMensagem($mensagem, $idSala, $userId);
         header("location: sala.php?id=$idSala");
     } else {
+        $mensagemDAO->adicionaMensagem("", $idSala, $userId);
         header("location: sala.php?id=$idSala");
     }

@@ -11,3 +11,7 @@
         <meta charset="utf-8">
         <title>EChat</title>
     </head>
+
+    <?php
+   
+  ?>

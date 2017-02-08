@@ -1,10 +1,9 @@
 <?php include("cabecalho.php"); ?>
-  <?php
-    if (!estaLogado()) {
-      require_once("loginFormulario.php");
-    } else {
+<?php include("loginFormulario.php"); ?>
+<?php
+if (estaLogado()) {
         header("location: logado.php");
     }
-  ?>
+     ?>
   </body>
 </html>

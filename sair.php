@@ -7,10 +7,6 @@
     $userNome = $_SESSION['usuario_logado'];
     $usuarioDAO = new UsuarioDAO($conecta);
 
-    $usuarioDAO->removeUsuario($nome);
+    $usuarioDAO->removeUsuario($userNome);
     session_destroy();
-    session_start();
-    $_SESSION['danger'] = "Usuario ".$userNome." deslogado!";
-
     header("Location: index.php");
-    die();

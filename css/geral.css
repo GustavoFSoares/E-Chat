@@ -10,7 +10,7 @@ section,summary,time,mark,audio,video {
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
+    font-size: 14px;
     vertical-align: baseline;
     background: transparent;
     font-family: 'Ubuntu', sans-serif;
@@ -125,7 +125,7 @@ input[type="text"]:hover{
 .menuLateral li {
     overflow: hidden;
     list-style-type: inherit;
-    padding: 5px;
+    padding: 2px;
 }
 
 .menuLateral li a{
@@ -145,7 +145,7 @@ input[type="text"]:hover{
 }
 
 .lista, .formulario{
-    display: none;
+   
 }
 
 
@@ -204,7 +204,7 @@ input[type="text"]:hover{
 .lista li{
     overflow: hidden;
     list-style-type: inherit;
-    padding: 5px;
+    padding: 2px;
     text-align: left;
     margin-left: 25px;
 }
@@ -246,4 +246,13 @@ input[type="text"]:hover{
     border:none;
     background: #000000;
     color: #00F800;
+}
+
+.install p{
+        color:#00F800;
+        text-align: left;
+}
+
+.form-login h1{
+    font-size:100px;
 }
