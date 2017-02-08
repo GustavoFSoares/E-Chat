@@ -22,5 +22,7 @@
     }
 
     $arr = $mensagemDAO->exibirMensagem($idSala);
+    //var_dump($arr);
+    //$arr['fk_usuario'] = $usuarioDAO->buscaNome($arr['fk_usuario']);
 
     echo json_encode($arr);

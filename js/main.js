@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 
 function enviarMsg(){
-    
+
     var data = {
         id: $("#idSala").val(),
         msg: $("#msg").val()
@@ -17,18 +17,23 @@ function enviarMsg(){
         url: "http://localhost/echat/adicionaMensagem.php",
         data: data,
 
-        success: function(data){
+        success: function (data){
 
             $(".mensagens-list").empty();
-            
+
             var string;
 
             for (var i = 0; i < data.length; i++) {
-                string += '<li id="mensagem"><span>'+data[i].data+"</span> | <span>"+data[i].fk_usuario+"</span>: <span>"+data[i].msg+'</span></li>';
+                data = ((typeof data == "undefined") ? 'defaultValue' : data);
+                string +=
+                "<div id='mensagem'>"+
+                    "<span class='data'>"+data[i].data+"  -!-  </span>"+
+                    "<span class='nome'>"+data[i].fk_usuario+ ": </span>"+
+                    "<span class='msg'>"+data[i].msg+"</span>"+
+                "</div>";
             }
 
             $(".mensagens-list").append(string);
-
         },
 
         error: function(err){
