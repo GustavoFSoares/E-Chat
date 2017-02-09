@@ -3,10 +3,10 @@ $(document).ready(function()
 {
 
     $('#send').click(enviarMsg);
-
     setInterval(passaFuncao, 1000);
     //passaFuncao();
 
+<<<<<<< HEAD
     $('#msg').keypress(function (e)
     {
         var key = e.which;
@@ -17,6 +17,23 @@ $(document).ready(function()
         }
     });
 
+=======
+    $('#msg').ready(
+    function(){
+        $(this).val('');
+    });
+
+     $('#msg').keypress(function (e) {
+     var key = e.which;
+     if(key == 13)  // the enter key code
+      {
+        $('#send').click();
+        $('#msg').val(''); 
+        return false;  
+      }
+    });
+  
+>>>>>>> 2d0b0da723f5d9bd390a475c2c98237e18d9e1a6
 });
 
 function passaFuncao()

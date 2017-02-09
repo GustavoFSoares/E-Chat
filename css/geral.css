@@ -257,3 +257,7 @@ input[type="text"]:hover{
 .form-login h1{
     font-size:500px;
 }
+
+.blink{ 
+       font-size:500px; 
+    }
