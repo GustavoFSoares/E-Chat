@@ -2,18 +2,23 @@
 $(document).ready(function(){
 
     $('#send').click(enviarMsg);
-
     setInterval(passaFuncao, 1000);
     //passaFuncao();
 
- $('#msg').keypress(function (e) {
- var key = e.which;
- if(key == 13)  // the enter key code
-  {
-    $('#send').click();
-    return false;  
-  }
-});
+    $('#msg').ready(
+    function(){
+        $(this).val('');
+    });
+
+     $('#msg').keypress(function (e) {
+     var key = e.which;
+     if(key == 13)  // the enter key code
+      {
+        $('#send').click();
+        $('#msg').val(''); 
+        return false;  
+      }
+    });
   
 });
 
