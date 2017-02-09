@@ -1,6 +1,7 @@
 <?php   include_once("logado.php");
         require_once("class/MensagemDAO.php");
         ?>
+    <div class="content">
     <div class="chat">
         <?php
     $salaDAO = new SalaDAO($conecta);
@@ -13,6 +14,10 @@
 
     $salaDAO = new SalaDAO($conecta);
 
+    ?>
+<div id="msg_chat">
+
+    <?php 
     if ($salaDAO->verifica($userId, $salaId)) {
 
         $mensagens = $mensagemDAO->exibirMensagem($salaId); ?>
@@ -38,9 +43,15 @@
 
         <input id="idSala" type="hidden" name="idSala" value="<?=$salaId?>">
         <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span>
-        <input id="msg" class="mensagem" name="mensagem" checked="checked">  </input>
+        <input id="msg" class="mensagem" name="mensagem" checked="checked" placeholder="Escreva aqui !"
+        style="height: 30px; width: 600px;">
 
-        <a id="send" class="btn-enviar">INSERT</a>
+        </input>
+
+        <a id="send" type="submit" class="btn-enviar">INSERT</a>
 
     </form>
     </div>
+
+</div>
+</div>

@@ -220,7 +220,8 @@ input[type="text"]:hover{
 }
 
 .mensagem{
-    border: none;
+    margin: 5px 0px 20px 0px;
+    border-color: red;
     overflow: auto;
     outline: none;
     background: #000000;
