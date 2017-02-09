@@ -2,56 +2,54 @@
         require_once("class/MensagemDAO.php");
         ?>
     <div class="content">
-    <div class="chat">
-        <?php
-    $salaDAO = new SalaDAO($conecta);
-    $usuario_logadoarioDAO = new UsuarioDAO($conecta);
-    $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
-    $mensagemDAO = new MensagemDAO($conecta);
+        <div class="chat">
+            <?php
+                $salaDAO = new SalaDAO($conecta);
+                $usuario_logadoarioDAO = new UsuarioDAO($conecta);
+                $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
+                $mensagemDAO = new MensagemDAO($conecta);
 
-    $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
-    $salaId = $_GET['id'];
+                $userId = $usuarioDAO->selecionaId($_SESSION['usuario_logado']);
+                $salaId = $_GET['id'];
 
-    $salaDAO = new SalaDAO($conecta);
+                $salaDAO = new SalaDAO($conecta);
 
-    ?>
-<div id="msg_chat">
+            ?>
+            <div id="msg_chat">
 
-    <?php 
-    if ($salaDAO->verifica($userId, $salaId)) {
+                <?php
+                if ($salaDAO->verifica($userId, $salaId)) {
 
-        $mensagens = $mensagemDAO->exibirMensagem($salaId); ?>
+                    $mensagens = $mensagemDAO->exibirMensagem($salaId); ?>
 
-        <ol class="mensagens-list">
-        <?php foreach ($mensagens as $mensagem) { ?>
-                <div id="mensagem">
-                    <span class="data"><?= $mensagem['data']."  -!-  "?></span>
-                    <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
-                    <span class="msg"><?= $mensagem['msg']?></span>
-                </div> <?php
-        } ?>
-    </ol> <?php
+                    <ol class="mensagens-list"> <?php
+                        foreach ($mensagens as $mensagem) { ?>
+                            <div id="mensagem">
+                                <span class="data"><?= $mensagem['data']."  -!-  "?></span>
+                                <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
+                                <span class="msg"><?= $mensagem['msg']?></span>
+                            </div> <?php
+                        } ?>
+                    </ol> <?php
 
-    } else {
-        $salaDAO->entrarSala($salaId, $userId);
-        header("location: http://localhost/echat/sala.php?id=$salaId");
-        die;
-    }
-    ?>
+                } else {
+                    $salaDAO->entrarSala($salaId, $userId);
+                    header("location: http://localhost/echat/sala.php?id=$salaId");
+                    die;
+                }?>
 
-    <form action="" method="POST">
 
-        <input id="idSala" type="hidden" name="idSala" value="<?=$salaId?>">
-        <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span>
-        <input id="msg" class="mensagem" name="mensagem" checked="checked" placeholder="Escreva aqui !"
-        style="height: 30px; width: 600px;">
+                <form action="" method="POST">
 
-        </input>
+                    <input id="idSala" type="hidden" name="idSala" value="<?=$salaId?>">
+                    <span><?= $_SESSION['usuario_logado'] . ": ~$"?></span>
+                    <input id="msg" class="mensagem" name="mensagem" checked="checked" placeholder="Escreva aqui !"style="height: 30px; width: 600px;">
 
-        <a id="send" type="submit" class="btn-enviar">INSERT</a>
 
-    </form>
+                    <a id="send" type="submit" class="btn-enviar">INSERT</a>
+
+                </form>
+            </div>
+            <?php require_once("js/deslogar.js");?>
+        </div>
     </div>
-
-</div>
-</div>

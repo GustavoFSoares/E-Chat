@@ -1,23 +1,26 @@
 
-$(document).ready(function(){
+$(document).ready(function()
+{
 
     $('#send').click(enviarMsg);
 
     setInterval(passaFuncao, 1000);
     //passaFuncao();
 
- $('#msg').keypress(function (e) {
- var key = e.which;
- if(key == 13)  // the enter key code
-  {
-    $('#send').click();
-    return false;  
-  }
-});
-  
+    $('#msg').keypress(function (e)
+    {
+        var key = e.which;
+        if(key == 13) {  // the enter key code
+
+            $('#send').click();
+            return false;
+        }
+    });
+
 });
 
-function passaFuncao(){
+function passaFuncao()
+{
     var data = {
         id : $("#idSala").val()
     }
@@ -28,7 +31,8 @@ function passaFuncao(){
         crossDomain: true,
         dataType: 'json',
 
-        success: function (data){
+        success: function (data)
+        {
             console.log(data.error);
             $(".mensagens-list").empty();
 
@@ -55,19 +59,21 @@ function passaFuncao(){
     });
 }
 
-function enviarMsg(){
+function enviarMsg()
+{
 
     var data = {
         id: $("#idSala").val(),
         msg: $("#msg").val()
     };
 
-    $.ajax({
+    $.ajax( {
         type: "POST",
         url: "adicionaMensagem.php",
         data: data,
 
-        success: function (data){
+        success: function (data)
+        {
 
             $(".mensagens-list").empty();
 
@@ -87,7 +93,8 @@ function enviarMsg(){
             $(".mensagens-list").append(string);
         },
 
-        error: function(err){
+        error: function(err)
+        {
             console.log(err);
         },
 

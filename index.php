@@ -1,9 +1,9 @@
 <?php include("cabecalho.php"); ?>
 <?php include("loginFormulario.php"); ?>
 <?php
-if (estaLogado()) {
+    if (estaLogado()) {
         header("location: logado.php");
-    }
-     ?>
+    } ?>
+
   </body>
 </html>
