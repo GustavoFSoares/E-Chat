@@ -6,18 +6,6 @@ $(document).ready(function()
     setInterval(passaFuncao, 1000);
     //passaFuncao();
 
-<<<<<<< HEAD
-    $('#msg').keypress(function (e)
-    {
-        var key = e.which;
-        if(key == 13) {  // the enter key code
-
-            $('#send').click();
-            return false;
-        }
-    });
-
-=======
     $('#msg').ready(
     function(){
         $(this).val('');
@@ -28,12 +16,11 @@ $(document).ready(function()
      if(key == 13)  // the enter key code
       {
         $('#send').click();
-        $('#msg').val(''); 
+        $('#msg').val('');
         return false;  
       }
     });
-  
->>>>>>> 2d0b0da723f5d9bd390a475c2c98237e18d9e1a6
+
 });
 
 function passaFuncao()
@@ -50,14 +37,13 @@ function passaFuncao()
 
         success: function (data)
         {
-            console.log(data.error);
+            
             $(".mensagens-list").empty();
 
-            var string;
+            var string = '';
 
-            console.log(data);
             for (var i = 0; i < data.length; i++) {
-                data = ((typeof data == 'undefined') ? 'defaultValue' : data);
+                //data = ((typeof data == undefined) ? 'defaultValue' : data);
                 string +=
                 '<li id="mensagem">'+
                     '<span class="data">'+data[i].data+'  -!-  </span>'+
@@ -84,6 +70,9 @@ function enviarMsg()
         msg: $("#msg").val()
     };
 
+    console.log("inicio");
+    console.log(data);
+    console.log("meio");
     $.ajax( {
         type: "POST",
         url: "adicionaMensagem.php",
@@ -91,14 +80,11 @@ function enviarMsg()
 
         success: function (data)
         {
-
             $(".mensagens-list").empty();
 
-            var string;
-
-            console.log(data);
+            var string = '';
             for (var i = 0; i < data.length; i++) {
-                data = ((typeof data == 'undefined') ? 'defaultValue' : data);
+                console.log(data[i]);
                 string +=
                 '<li id="mensagem">'+
                     '<span class="data">'+data[i].data+'  -!-  </span>'+
@@ -106,8 +92,11 @@ function enviarMsg()
                     '<span class="msg">'+data[i].msg+'</span>'+
                 '</li>';
             }
-
-            $(".mensagens-list").append(string);
+            //console.log(string);
+            //if (string != undefined){
+                $(".mensagens-list").append(string);
+                $(".chat").animate({scrollTop: 500}, 1000);
+           // }
         },
 
         error: function(err)

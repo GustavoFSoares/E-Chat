@@ -60,6 +60,8 @@
 
       public function adicionaSala($nome, $tipo, $userId)
       {
+        $nome = addslashes($nome);
+
         $query="INSERT INTO sala (nome, tipo, data,fk_usuario) VALUES ('{$nome}', '{$tipo}', now(),'{$userId}')";
         $resultado = mysqli_query($this->conecta, $query);
 

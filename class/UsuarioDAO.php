@@ -12,6 +12,8 @@
 
       public function adicionaUsuario($nome)
       {
+        $nome = addslashes($nome);
+
         $query="INSERT INTO usuario (nome) VALUES ('{$nome}')";
         $resultado = mysqli_query($this->conecta, $query);
 
@@ -21,6 +23,8 @@
 
       public function removeUsuario($nome)
       {
+        $nome = addslashes($nome);
+        
         $query = "DELETE FROM usuario WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
 
@@ -30,6 +34,7 @@
 
       public function selecionaId($nome)
       {
+        $nome = addslashes($nome);
         $query = "SELECT id_usuario FROM usuario WHERE nome = '{$nome}'";
         $resultado = mysqli_query($this->conecta, $query);
 

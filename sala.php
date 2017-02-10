@@ -2,7 +2,7 @@
         require_once("class/MensagemDAO.php");
         ?>
     <div class="content">
-        <div class="chat">
+        <div class="chat" id="scrollTo">
             <?php
                 $salaDAO = new SalaDAO($conecta);
                 $usuario_logadoarioDAO = new UsuarioDAO($conecta);
@@ -15,7 +15,7 @@
                 $salaDAO = new SalaDAO($conecta);
 
             ?>
-            <div id="msg_chat">
+            <div class="msg-c" id="msg_chat">
 
                 <?php
                 if ($salaDAO->verifica($userId, $salaId)) {
@@ -26,7 +26,8 @@
                         foreach ($mensagens as $mensagem) { ?>
                             <div id="mensagem">
                                 <span class="data"><?= $mensagem['data']."  -!-  "?></span>
-                                <span class="nome"><?=$usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
+                                <span class="nome"><?= $usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
+                                <span class="nome"><?php echo $mensagem['fk_usuario']?></span>
                                 <span class="msg"><?= $mensagem['msg']?></span>
                             </div> <?php
                         } ?>
@@ -39,6 +40,8 @@
                 }?>
 
 
+            </div>
+        </div>
                 <form action="" method="POST">
 
                     <input id="idSala" type="hidden" name="idSala" value="<?=$salaId?>">
@@ -49,7 +52,4 @@
                     <a id="send" type="submit" class="btn-enviar">INSERT</a>
 
                 </form>
-            </div>
-            <?php require_once("js/deslogar.js");?>
-        </div>
     </div>

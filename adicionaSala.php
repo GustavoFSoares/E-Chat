@@ -18,12 +18,11 @@
 
         if ($salaDAO->adicionaSala($salaNome, $salaTipo, $userId)) {
             $salaId = $salaDAO->selecionaId($salaNome);
-
             $salaDAO->entrarSala($salaId, $userId);
             header("location: index.php");
         } else {
 
-          echo "Nao deu!";
+            echo "Nao deu!";
 
         }
     }

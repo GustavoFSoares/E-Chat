@@ -241,6 +241,11 @@ input[type="text"]:hover{
 }
 .chat{
     text-align: left;
+    height: 500px;
+    overflow: auto;
+}
+
+.msg-c{
 }
 
 .btn-enviar {
