@@ -17,7 +17,7 @@ $(document).ready(function()
       {
         $('#send').click();
         $('#msg').val('');
-        return false;  
+        return false;
       }
     });
 
@@ -37,7 +37,7 @@ function passaFuncao()
 
         success: function (data)
         {
-            
+
             $(".mensagens-list").empty();
 
             var string = '';
@@ -47,7 +47,7 @@ function passaFuncao()
                 string +=
                 '<li id="mensagem">'+
                     '<span class="data">'+data[i].data+'  -!-  </span>'+
-                    '<span class="nome">'+data[i].fk_usuario+ ': </span>'+
+                    '<span class="nome">'+data[i].nome_usuario+ ': </span>'+
                     '<span class="msg">'+data[i].msg+'</span>'+
                 '</li>';
             }
@@ -88,7 +88,7 @@ function enviarMsg()
                 string +=
                 '<li id="mensagem">'+
                     '<span class="data">'+data[i].data+'  -!-  </span>'+
-                    '<span class="nome">'+data[i].fk_usuario+ ': </span>'+
+                    '<span class="nome">'+data[i].nome_usuario+ ': </span>'+
                     '<span class="msg">'+data[i].msg+'</span>'+
                 '</li>';
             }

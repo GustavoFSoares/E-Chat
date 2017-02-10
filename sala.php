@@ -27,7 +27,7 @@
                             <div id="mensagem">
                                 <span class="data"><?= $mensagem['data']."  -!-  "?></span>
                                 <span class="nome"><?= $usuarioDAO->buscaNome($mensagem['fk_usuario'])." : "?></span>
-                                <span class="nome"><?php echo $mensagem['fk_usuario']?></span>
+                                <span class="nome"><?= $mensagem['fk_usuario']?></span>
                                 <span class="msg"><?= $mensagem['msg']?></span>
                             </div> <?php
                         } ?>
@@ -35,7 +35,7 @@
 
                 } else {
                     $salaDAO->entrarSala($salaId, $userId);
-                    header("location: http://localhost/echat/sala.php?id=$salaId");
+                    header("location: /echat/sala.php?id=$salaId");
                     die;
                 }?>
 

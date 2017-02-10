@@ -21,10 +21,10 @@
 
         public function exibirMensagem($salaId)
         {
-            $query = "SELECT mensagem.* FROM mensagem
+            $query = "SELECT mensagem.*, (SELECT nome AS nome_usuario FROM usuario WHERE usuario.id_usuario = mensagem.fk_usuario) AS nome_usuario FROM mensagem
                 INNER JOIN usuario ON usuario.id_usuario = mensagem.fk_usuario
                 INNER JOIN sala ON sala.id_sala = mensagem.fk_sala
-            WHERE sala.id_sala = '{$salaId}' ORDER BY mensagem.id_msg";
+            WHERE sala.id_sala = '{$salaId}' ORDER BY mensagem.id_msg" ;
 
             $resultado = mysqli_query($this->conecta, $query);
 
@@ -34,5 +34,5 @@
             }
             return $arMensagem;
         }
-          
+
     }
